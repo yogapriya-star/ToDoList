@@ -1,26 +1,56 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <title>To-Do List</title>
+        <style>
+            .clickable {
+                cursor: pointer;
+            }
+        </style>
     </head>
     <body>
-        <input id="input">
-        <button onclick="add()">Add</button>
-        <ul id="list-container">
-            <li>
-                Hello
-                <button onclick="deleteItem(event)">Delete</button>
-            </li>
-        </ul>
+        <div class="container border p-4">
+            <form>
+                <div class="form-group">
+                    <label for="todolist">To-Do</label>
+                    <input type="text" class="form-control" id="todolist" placeholder="Enter your list">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="add()">Submit</button>
+            </form>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>To Do List Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <ul id="container">
+                            <li>
+                                Hello
+                                <span class="badge badge-danger clickable" onclick="deleteItem(event)">Delete</span>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <script>
             //Selecting ul
-            var ul = document.getElementById("list-container");
+            var ul = document.getElementById("container");
 
             //Selecting input
-            var input = document.getElementById("input");
+            var input = document.getElementById("todolist");
 
             function add(){
                 var listItem = document.createElement("li")
-                listItem.innerHTML=input.value + "<button onclick='deleteItem(event)'>Delete</button>"
+
+                listItem.innerHTML=input.value + "<span class='badge badge-danger clickable' onclick='deleteItem(event)'>Delete</span>"
                 ul.append(listItem)
             }
 
@@ -28,5 +58,8 @@
                 event.target.parentElement.remove()
             }
         </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </body>
 </html>
