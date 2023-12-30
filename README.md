@@ -1,13 +1,9 @@
 # ToDoList
 JavaScript Tutorial
 
-Created the To-Do-List by adding the form with submit button and view the list in the form of table format  with delete button using HTML, Bootstrap, Javascript
+Created the To-Do-List by adding the form with submit button and view the list in the form of table format  with delete button using HTML, Bootstrap, Javascript.
+
 ## Table of Contents
-
-JavaScript Tutorial
-
-Created the To-Do-List using HTML, CSS, Javascript.
-
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
